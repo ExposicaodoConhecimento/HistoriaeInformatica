@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100;
+    background-color: #353535;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 200px;
+}
+.logo-img{
+    height: 50px;
+    width: 50px;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+}
+.container-logo {
+    display: flex;
+    align-items: center;
+}
+.logo-texto {
+    margin-left: 15px;
+    color: #FFFFFF;
+}
+.menu li{
+    display: inline-block;
+    margin: 0 10px;
+}
+.menu li a{
+    font-size: 15px;
+    text-decoration: none;
+    color:#FFFFFF;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+.menu li a:hover{
+    background-color: #999898;
+}
+.container {
+
+    justify-content: center;
+    display: flex;
+    margin: 0 100px;
+    padding-top: 1px;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+    min-height: 100vh;
+        
+        
+}
+.card:hover {
+    background-image: linear-gradient(#108cdf, #003f69);
+    height: 400px;
+}
+.card:hover .img {
+    width: 300px;
+    opacity: 1;
+}
+ .card {
+    position: relative;
+    width: 280px;
+    height: 175px;
+    box-shadow: 5px 10px 20px rgb(0, 0, 0); 
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .5s;
+    background-color: #023A5F;
+    margin-bottom: 10px;
+}
+
+.container .card .conteudo {
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+}
+.card:hover .conteudo{
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+.card .conteudo {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}    
+.card .conteudo p {
+    margin: 0;
+}
+.titulos {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 10px;    
+}
+
+body{
+    background-color: #f6fafd;
+}
