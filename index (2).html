@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100;
+            background-color: #213a5c;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            margin-bottom: 100px;
+            border: 2px solid;
+            border-color: #000;
+        }
+
+        ul {
+            float: right;
+
+        }
+
+        .logo-img {
+            margin-top: 10px;
+            margin-left: -100px;
+            height: 55px;
+            width: 70px;
+            border-radius: 5px;
+            background-color: #000;
+            border-radius: 15px;
+            position: relative;
+            border: 3px solid;
+            border-color: #FFF;
+        }
+
+        .logo-img:before {
+            display: block;
+            content: "";
+            background-color: #00bfff;
+            position: absolute;
+            left: 9px;
+            top: 9px;
+            right: 9px;
+            bottom: 9px;
+            border-radius: 5px;
+
+        }
+
+        .logo-im {
+            margin-left: -90px;
+            height: 10px;
+            width: 50px;
+            border-radius: 5px;
+            background-color: #000;
+            border-radius: 10px;
+            position: relative;
+            border: 3px solid;
+            border-color: #FFF;
+        }
+
+        .logo-im:before {
+            display: block;
+            content: "";
+            background-color: #000;
+            position: absolute;
+            left: 9px;
+            top: 9px;
+            right: 9px;
+            bottom: 9px;
+            border-radius: 3px;
+
+        }
+
+        .container-logo {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .logo-texto {
+            text-align: center;
+            text-shadow: 10px -3px 0 #000;
+            font-size: 30px;
+            font-family: cursive;
+            margin-bottom: 5px;
+            margin-top: -80px;
+            margin-left: 20px;
+            margin-right: 20px;
+            color: white;
+        }
+
+        .menu li {
+            display: inline-flex;
+            margin: 0 15px;
+            align-items: right;
+        }
+
+        .menu li a {
+            text-align: right;
+            margin-left: 10px;
+            margin-right: -10px;
+            font-size: 17px;
+            text-decoration: none;
+            color: #FFFFFF;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        .menu li a:hover {
+            background-color: #999898;
+
+        }
+
+        .container {
+
+            justify-content: center;
+            display: flex;
+            padding-top: 1px;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            z-index: 2;
+            min-height: 100vh;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .card:hover {
+            background-image: linear-gradient(#213a5c, #2d69be);
+            height: 500px;
+        }
+
+        .card:hover .img {
+            width: 300px;
+            opacity: 1;
+        }
+
+        .card {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            box-shadow: 5px 10px 20px rgb(175, 193, 240);
+            border-radius: 20px;
+            overflow: hidden;
+            display: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all .5s;
+            background-color: #213a5c;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 10px double white;
+
+
+        }
+
+        .titulo span {
+            text-transform: uppercase;
+            font-size: 50px;
+            font-weight: 100;
+            font-style: italic;
+            transition: all .5s;
+            text-shadow: 3px 3px 0 #FFF;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .container .card .conteudo {
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card:hover .conteudo {
+            height: auto;
+            padding: 20px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card .conteudo {
+            padding: 0px 20px;
+            height: 0;
+            opacity: 0;
+            transition: all .5s;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            transform: translateY(30px);
+        }
+
+        .card .conteudo p {
+            margin: 0;
+        }
+
+        .card-1:hover {
+            background-image: linear-gradient(#213a5c, #2d69be);
+            height: auto;
+        }
+
+        .card-1:hover .img {
+            width: 300px;
+            opacity: 1;
+        }
+
+        .card-1 {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            box-shadow: 5px 10px 20px rgb(175, 193, 240);
+            border-radius: 20px;
+            overflow: hidden;
+            display: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all .5s;
+            background-color: #213a5c;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 10px double white;
+
+
+        }
+
+        .container .card-1 .conteudo {
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-1:hover .conteudo {
+            height: 520px;
+            padding: 20px;
+            opacity: 1;
+            transform: translateY(0);
+            overflow: hidden;
+        }
+
+        .card-1 .conteudo {
+            padding: 0px 20px;
+            height: 0;
+            opacity: 0;
+            transition: all .5s;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            transform: translateY(30px);
+        }
+
+        .card-1 .conteudo p {
+            margin: 0;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .card-2:hover {
+            background-image: linear-gradient(#213a5c, #2d69be);
+            height: auto;
+        }
+
+        .card-2:hover .img {
+            width: 300px;
+            opacity: 1;
+        }
+
+        .card-2 {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            box-shadow: 5px 10px 20px rgb(175, 193, 240);
+            border-radius: 20px;
+            overflow: hidden;
+            display: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all .5s;
+            background-color: #213a5c;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 10px double white;
+
+
+        }
+
+        .container .card-2 .conteudo {
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-2:hover .conteudo {
+            height: 800px;
+            padding: 20px;
+            opacity: 1;
+            transform: translateY(0);
+            overflow: hidden;
+        }
+
+        .card-2 .conteudo {
+            padding: 0px 20px;
+            height: 0;
+            opacity: 0;
+            transition: all .5s;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            transform: translateY(30px);
+        }
+
+        .card-2 .conteudo p {
+            margin: 0;
+        }
+
+
+
+
+
+
+        .card-3:hover {
+            background-image: linear-gradient(#213a5c, #2d69be);
+            height: auto;
+        }
+
+        .card-3:hover .img {
+            width: 300px;
+            opacity: 1;
+        }
+
+        .card-3 {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            box-shadow: 5px 10px 20px rgb(175, 193, 240);
+            border-radius: 20px;
+            overflow: hidden;
+            display: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all .5s;
+            background-color: #213a5c;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 10px double white;
+
+
+        }
+
+        .container .card-3 .conteudo {
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-3:hover .conteudo {
+            height: 820px;
+            padding: 30px;
+            opacity: 1;
+            transform: translateY(0);
+            overflow: hidden;
+        }
+
+        .card-3 .conteudo {
+            padding: 0px 20px;
+            height: 0;
+            opacity: 0;
+            transition: all .5s;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            transform: translateY(30px);
+        }
+
+        .card-3 .conteudo p {
+            margin: 0;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .card-4:hover {
+            background-image: linear-gradient(#213a5c, #2d69be);
+            height: auto;
+        }
+
+        .card-4:hover .img {
+            width: 300px;
+            opacity: 1;
+        }
+
+        .card-4 {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            box-shadow: 5px 10px 20px rgb(175, 193, 240);
+            border-radius: 20px;
+            overflow: hidden;
+            display: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all .5s;
+            background-color: #213a5c;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 10px double white;
+
+
+        }
+
+        .container .card-4 .conteudo {
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-4:hover .conteudo {
+            height: 700px;
+            padding: 20px;
+            opacity: 1;
+            transform: translateY(0);
+            overflow: hidden;
+        }
+
+        .card-4 .conteudo {
+            padding: 0px 20px;
+            height: 0;
+            opacity: 0;
+            transition: all .5s;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            transform: translateY(30px);
+        }
+
+        .card-4 .conteudo p {
+            margin: 0;
+        }
+
+
+
+
+
+
+
+        .card-5:hover {
+            background-image: linear-gradient(#213a5c, #2d69be);
+            height: auto;
+        }
+
+        .card-5:hover .img {
+            width: 300px;
+            opacity: 1;
+        }
+
+        .card-5 {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            box-shadow: 5px 10px 20px rgb(175, 193, 240);
+            border-radius: 20px;
+            overflow: hidden;
+            display: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all .5s;
+            background-color: #213a5c;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 10px double white;
+
+
+        }
+
+        .container .card-5 .conteudo {
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-5:hover .conteudo {
+            height: 620px;
+            padding: 20px;
+            opacity: 1;
+            transform: translateY(0);
+            overflow: hidden;
+        }
+
+        .card-5 .conteudo {
+            padding: 0px 20px;
+            height: 0;
+            opacity: 0;
+            transition: all .5s;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            transform: translateY(30px);
+        }
+
+        .card-5 .conteudo p {
+            margin: 0;
+        }
+
+
+
+
+
+
+
+        .card-6:hover {
+            background-image: linear-gradient(#213a5c, #2d69be);
+            height: auto;
+        }
+
+        .card-6:hover .img {
+            width: 300px;
+            opacity: 1;
+        }
+
+        .card-6 {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            box-shadow: 5px 10px 20px rgb(175, 193, 240);
+            border-radius: 20px;
+            overflow: hidden;
+            display: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all .5s;
+            background-color: #213a5c;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 10px double white;
+
+
+        }
+
+        .container .card-6 .conteudo {
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-6:hover .conteudo {
+            height: 560px;
+            padding: 20px;
+            opacity: 1;
+            transform: translateY(0);
+            overflow: hidden;
+        }
+
+        .card-6 .conteudo {
+            padding: 0px 20px;
+            height: 0;
+            opacity: 0;
+            transition: all .5s;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            transform: translateY(30px);
+        }
+
+        .card-6 .conteudo p {
+            margin: 0;
+        }
+
+
+
+
+
+
+
+
+        body {
+            background-color: #f6fafd;
+
+        }
+
+        .containerr {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        .bubbles {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .bubbles span {
+            position: relative;
+            min-width: 30px;
+            height: 30px;
+            background: #90A4BD;
+            box-shadow: 0 9 9 10px #213A5C,
+                0px 0px 50px #90A4BD,
+                0px 0px 100px #90A4BD;
+            margin: 0 4px;
+            border-radius: 50%;
+            animation: animate 50s linear infinite;
+            animation-duration: calc(300s / var(--i));
+        }
+
+        .bubbles span:nth-child(even) {
+
+            background: #0247a1;
+            box-shadow: 0 -3px 0 20px #000000 0 0 50px #0247a1 0 0 100px #0247a1 z-index: index -1;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translatey(100vh) scale(0);
+            }
+
+            100% {
+                transform: translatey(-10vh) scale(2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-logo">
+
+            <div class="logo">
+                <div class="logo-img">
+                </div>
+
+                <div class="logo">
+                    <div class="logo-im">
+                    </div>
+
+
+                </div>
+                <div class="logo-texto">
+                    <H1> Cedup</H1>
+                </div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Desenvolvedores </a></li>
+                    <li><a href="index (3).html">Galeria de Imagens </a></li>
+                </ul>
+
+            </div>
+
+
+
+    </header>
+    <div class="containerr">
+        <div class="bubbles">
+
+            <span style="--i: 1;"></span>
+            <span style="--i: 4;"></span>
+            <span style="--i: 3;"></span>
+            <span style="--i: 5;"></span>
+            <span style="--i: 2;"></span>
+            <span style="--i: 10;"></span>
+            <span style="--i: 9;"></span>
+            <span style="--i: 6;"></span>
+            <span style="--i: 12;"></span>
+            <span style="--i: 11;"></span>
+            <span style="--i: 7;"></span>
+            <span style="--i: 15;"></span>
+            <span style="--i: 8;"></span>
+            <span style="--i: 14;"></span>
+            <span style="--i: 17;"></span>
+            <span style="--i: 16;"></span>
+            <span style="--i: 15;"></span>
+            <span style="--i: 20;"></span>
+            <span style="--i: 13;"></span>
+            <span style="--i: 18;"></span>
+            <span style="--i: 22;"></span>
+            <span style="--i: 24;"></span>
+            <span style="--i: 26;"></span>
+            <span style="--i: 21;"></span>
+            <span style="--i: 23;"></span>
+            <span style="--i: 29;"></span>
+            <span style="--i: 27;"></span>
+            <span style="--i: 30;"></span>
+            <span style="--i: 33;"></span>
+            <span style="--i: 28;"></span>
+            <span style="--i: 25;"></span>
+            <span style="--i: 36;"></span>
+            <span style="--i: 38;"></span>
+            <span style="--i: 40;"></span>
+            <span style="--i: 37;"></span>
+            <span style="--i: 39;"></span>
+            <span style="--i: 42;"></span>
+            <span style="--i: 44;"></span>
+            <span style="--i: 43;"></span>
+            <span style="--i: 46;"></span>
+            <span style="--i: 48;"></span>
+            <span style="--i: 52;"></span>
+            <span style="--i: 53;"></span>
+            <span style="--i: 47;"></span>
+            <span style="--i: 50;"></span>
+            <span style="--i: 49;"></span>
+            <span style="--i: 53;"></span>
+            <span style="--i: 54;"></span>
+            <span style="--i: 55;"></span>
+            <span style="--i: 57;"></span>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-4">
+            <div class="titulo">
+                <span>ANTIGAMENTE</span>
+            </div>
+            <div class="conteudo">
+
+                <p>O curso de informática como hj é chamado antigamente tinha outro nome antigamente era chamado de
+                    "técnico em processamento de dados "
+                    O diploma fornecia para os formados informava para as empresas que os técnicos eram aptos com
+                    formação para atuar na área de Redes, Banco de dados, manipulação de sistemas operacionais,
+                    Desenvolvimento de páginas para internet , análise de sistemas para o desenvolvimento de software, a
+                    realizar a manutenção, montagem e configuração de equipamentos, especificando, dimensionando e
+                    orçando componente eletrônicos.
+                    Profissional que opera em aplicativos básicos em ambientes informatizados, capaz de compreender o
+                    funcionamento do computador, ter noções de programação e integração com outras áreas, orientando o
+                    cliente sobre software através de treinamentos formais e informais.
+                    O diploma também informava que o formado tinha conhecimento científico e tecnológica em nível médio
+                    com conhecimentos práticos e teóricos para acompanhar os rápidos avanços da tecnologia.
+                    Quando o curso começou a ser chamado de técnico em informática ainda não havia a matéria de
+                    manutenção de computadores o que fazia os alunos e os próprios professores reclamarem por causa que
+                    o aluno chegava na empresa com diploma e não saberia como concertar um computador, sendo caso também
+                    que antigamente o aluno já começava no técnico ao entrar no 1°ANO DO ENSINO MÉDIO.
+
+                    Após a criação da internet e vindo os avanços da tecnologia, a internet começou a ganhar
+                    popularidade mas só em 01 de Agosto de 2001 o Cedup Renato Ramos Da Silva foi receber o acesso a
+                    internet sendo publicado como matéria pelo " Correio Lageano"</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card-5">
+            <div class="titulo">
+                <span>ATUALMENTE</span>
+            </div>
+            <div class="conteudo">
+                <p>O curso de informática vem sendo uma profissão com um grande campo no mercado de trabalho, sendo a
+                    informática uma profissão de estudo sem fim... uma profissão com um mercado de trabalho imenso sendo
+                    que um técnico em informática
+                    Atualmente a grade curricular do Cedup Renato Ramos Da Silva tem os componentes curriculares: Banco
+                    de Dados, Lógica de Programação, introdução a computação, Montagem e Manutenção,Redes,
+                    Sistemas Operacionais, Linguagem de Programação,Modelagem de Sistemas, Programação de Aplicativos.
+                    O Cedup houve muitas mudanças do que era antigamente começando por hoje em dia uma matéria só para
+                    manutenção de computadores o que fez o curso melhorar muito por conta de sair daquela visão antiga
+                    de que “técnico em informática” ou “programador” só sabe mexer com programação de computadores,
+                    aprimorando o curso e a capacidade de informação dos estudantes de informática do Cedup.
+
+                    Continuando com as mudanças o curso técnico diferente de antigamente agora optou por começar no
+                    2°ANO DO ENSINO MEDIO já que antigamente o curso técnico começava no 1° ANO DO ENSINO MEDIO isso fez
+                    com que no 1° ano do ensino médio isso fez com que o Cedup no 1° ano do ensino médio tente
+                    direcionar seus alunos para que no 2° ano eles escolham bem o que querem fazer.
+                    O curso oferece professores muito bem qualificados aonde transmitem seu conhecimento recebido para
+                    os alunos</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="card-1">
+            <div class="titulo">
+                <span>EX ALUNOS</span>
+            </div>
+            <div class="conteudo">
+
+                <p> ROSICLEI DE MATOS:
+                    Eu estudei Técnico em Processamento de Dados no antigo colégio diocesano, nos
+                    anos de 1990. A metodologia do curso eram primeiramente a exposição das aulas, os conceitos, o
+                    conteúdo em
+                    relação as disciplinas e depois nós tínhamos aulas práticas no laboratório. Os equipamentos
+                    que utilizávamos no laboratório na época eram do Windows3.1. Sobre as mudanças da informática
+                    em relação aquela época para agora, foram muitas. Quando eu iniciei aqui no CEDUP, no ano de 1996,
+                    nós tinhas dois laboratórios, em um já tínhamos o Windows95, no outro tínhamos o Windows3.1 e um
+                    servidor com aproximadamente 16 terminais, que para liga-los, tínhamos que utilizar um disquete
+                    para buscar os programas que estavam no servidor. No CEDUP antigamente o nome do curso não era
+                    "Informática" e sim "Téc em Processamento de Dados", que depois passou a ser "Operador de
+                    Computadores", para assim vir a ser "Téc de Informática". Algo importante a se ressaltar
+                    é que todos os cursos CEDUP, antigamente, tinham aulas de informática, porém,
+                    a Secretaria da Educação retirou após a popularização do celular. Lembrando que,
+                    se você tem conhecimento sobre o seu celular, não significa que tenha conhecimento sobre
+                    a informática também."</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-3">
+            <div class="titulo">
+                <span>EX ALUNOS</span>
+            </div>
+            <div class="conteudo">
+                <p> VANESSA BLOMER:
+                    "Eu fiz o técnico em Processamento de Dados nos anos de 1999 e 2000 no CEDUP Renato
+                    Ramos da Silva. Naquela época, na instituição não se tinha primeiro e segundo ano, nós faziamos de
+                    forma
+                    regular, então fiz o primeiro e segundo ano em outra escola e entrei no CEDUP no terceirão, e como
+                    queríamos fazer o técnico também, nós tínhamos 4 anos de ensino médio. Naquela época a questão de
+                    maquinários era algo precário, mas para a época era uma evolução grande, pois não eram todos que
+                    tinha computadores. No meu exemplo, meu computador na época custou R$2000,00 e para os anos de 2000
+                    esse valor era muito dinheiro. Em relação a tecnologia utilizada na aula, nós não tínhamos
+                    ferramentas, softwares e ides que auxiliavam na programação. Os professores nos ensinavam a
+                    programar tudo, se havia a necessidade de fazer um botão em um programa, eu teria que programar até
+                    o botão. As máquinas não suportavam muita coisa, pois tinha toda a questão do hardware. Então,
+                    nesses 26 anos de quando eu fiz o técnico para hoje em dia, muita coisa evoluiu, ides, ferramentas,
+                    linguagem de programação que cada vez mais buscam a melhoria e evolução do cotidiano. Cada vez mais
+                    hoje em dia vemos empregos que necessitam da tecnologia, diferente de antigamente onde trabalha com
+                    computadores era surpreendente e quase inacessível para maior parte da população. A escola por meio
+                    do governo, rifas e ações sempre tentou estar com o maquinário em dia para que as aulas pudessem ser
+                    dadas. Tinhas dois laboratórios, um com aproximadamente 8 máquinas que eram presas a mesa. Não
+                    existia mouse móvel como agora, na época era um botão que giravamos preso a mesa. Já no outro
+                    laboratório tínhamos desktops de mesa, porém, tinha pouco maquinário, então tínhamos que nos juntar
+                    em grupos de 3 ou 4 alunos para fazer o desenvolvimento das atividades."</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-6">
+            <div class="titulo">
+                <span>EX ALUNOS</span>
+            </div>
+            <div class="conteudo">
+
+                <p> KALYAN CIMARDI:
+                    Minha época no cedup foi incrível, sem dúvidas uma das melhores épocas da minha
+                    vida. Mas quanto
+                    ao curso de Informática que eu cursei, que na época ainda era a antiga grade 100% presencial, já
+                    não era tudo aquilo. A proposta do curso de informática é muito confundida com o curso de
+                    manutenção, porque quando você pensa em informática, você pensa na manutenção, e na verdade o curso
+                    de informática é voltado apenas a programação, que na minha opinião não ajuda muito na vida
+                    profissional. Entrei no curso em 2017 e confesso que se tivesse manutenção na minha época, eu usaria
+                    muito mais.
+<br>
+<BR>
+                    ARIANE CIMARDI:
+                    Na época da madrinha, em 2001, era diferente, comecei fazendo o segundo grau e depois resolvi fazer
+                    o técnico. Não era como hoje em que se faz segundo grau e técnicos juntos. Então fiz o primeiro e
+                    segundo ano lá, apenas no terceiro ano comecei a fazer o técnico. Como o curso era a tarde, o
+                    terceirão tive que terminar em outra escola a noite. Na minha época não era CEDUP era CIS, depois de
+                    alguns anos mudou para CEDUP Renato Ramos da Silva.
+                    A estrutura da escola era muito boa, com professores ótimos, muito responsáveis, porém, acho que
+                    hoje em dia está muito aberto, muito solto e pouca responsabilidade. O uniforme era único para
+                    todos, hoje tem variedades dependendo do curso. Sobre salas está tudo como era antigamente, o que
+                    houve de mudança nova foi o ginásio.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-2">
+            <div class="titulo">
+                <span>EVOLUÇÃO DOS COMPUTADORES</span>
+            </div>
+            <div class="conteudo">
+
+                <p>- 1946: é anunciada a criação do primeiro computador digital eletrônico de grande escala do mundo, o
+                    ENIAC (Electrical Numerical Integrator and Calculator).
+                    <BR>
+                    <BR>
+                    - 1951 a 1959: surgem os computadores de primeira geração. Esses eram capazes de calcular com uma
+                    velocidade de milésimos de segundo, além de serem programados em linguagem de máquina.
+                    <BR>
+                    <BR>
+                    - 1959 a 1965: surgem os computadores de segunda geração, com capacidade de calcular com uma
+                    velocidade de microssegundos, sendo programados em linguagem montadora.
+                    <BR>
+                    <BR>
+                    - 1965 a 1975: nascem os computadores da terceira geração. Esses computadores passam a ter diversos
+                    componentes miniaturizados e montados em um único CHIP, sendo capazes de calcular em nanossegundos,
+                    com uma linguagem de programação de alto nível, orientada para os procedimentos.
+                    <BR>
+                    <BR>
+                    - 1975 a 1981: são criados os computadores da quarta geração. Seguindo a tendência da terceira
+                    geração de miniaturização de seus componentes e o aperfeiçoamento dos seus Circuitos Integrados
+                    (CI). As linguagens utilizadas nessa geração eram de altíssimo nível, orientada para um problema.
+                    <BR>
+                    <BR>
+                    - 1990: a partir dessa década são lançados softwares de melhor qualidade e com capacidade de
+                    processar as informações com maior rapidez.
+                    <BR>
+                    <BR>
+                    - 2000: após a virada do milênio os computadores continuaram a seguir a tendência de miniaturização
+                    de seus componentes e, tornando dessa forma os computadores mais maleáveis e práticos nas tarefas
+                    diárias. Além disso, há um investimento maciço em seu design.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
